@@ -3,19 +3,19 @@ import pickle
 with open("preprocessor.pkl", "rb") as file:
     preprocessor = pickle.load(file)
 
-with open("car_price_model.pkl", "rb") as file:
+with open("lm.pkl", "rb") as file:
     loaded_lm = pickle.load(file)
 
 
 new_data = {
-    "Brand": ["BMW"],
-    "Year": [2018],
-    "Engine Size": [4.4],
-    "Fuel Type": ["Electric"],
-    "Transmission": ["Manual"],
-    "Mileage": [143190],
-    "Condition": ["Used"],
-    "Model": ["5 Series"],
+    "Brand": ["Audi"],
+    "Year": [2020],
+    "Engine Size": [2.4],
+    "Fuel Type": ["Petrol"],
+    "Transmission": ["Automatic"],
+    "Mileage": [22650],
+    "Condition": ["Like New"],
+    "Model": ["Q5"],
 }
 
 import pandas as pd
