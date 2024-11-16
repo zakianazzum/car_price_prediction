@@ -8,14 +8,14 @@ with open("lm.pkl", "rb") as file:
 
 
 new_data = {
-    "Brand": ["Audi"],
-    "Year": [2020],
+    "Brand": ["Tesla"],
+    "Year": [2024],
     "Engine Size": [2.4],
-    "Fuel Type": ["Petrol"],
+    "Fuel Type": ["Diesel"],
     "Transmission": ["Automatic"],
     "Mileage": [22650],
-    "Condition": ["Like New"],
-    "Model": ["Q5"],
+    "Condition": ["New"],
+    "Model": ["Model 3"],
 }
 
 import pandas as pd
