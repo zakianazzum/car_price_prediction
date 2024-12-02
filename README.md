@@ -1,52 +1,87 @@
 # Automobile Pricing Analysis
 
-This repository provides an in-depth analysis of automobile prices based on a dataset of both new and used cars. The analysis investigates how different factors such as brand, model, engine size, mileage and economic events influencce the prices of vehicles. Please note that the insights and conclusions drawn in the repository are based on the dataset provided and may not reflect real-world within the broader automobile market.
+This repository provides an in-depth analysis of automobile prices based on a dataset of both new and used cars. The analysis investigates how different factors such as brand, model, engine size, mileage and economic events influencce the prices of vehicles.By identifying trends and patterns, this this project aims to build predictive models to estimate the price of the used cars. Please note that the insights and conclusions drawn in the repository are based on the dataset provided and may not reflect real-world within the broader automobile market.
 
 # Dataset Description
 
-The dataset used in this analysis contains information about a veriety of used and new cars, focusin on factors that influence car prices. I includes details such as the car's brand, model, engine size and other relevan features. The dataset is used to explore the relationships between these factors and how they affect car pricing.
+The dataset used in this analysis contains information about a veriety of used and new cars, focusing on factors that influence car prices. I includes details such as the car's brand, model, engine size and other relevan features. The dataset is used to explore the relationships between these factors and how they affect car pricing.
 The dataset used in this analysis was collected from []
 
-# Key Findings
+# Analysis Highlights
 
-### 1. Brand and Model Impact on Price
+## Brand and Model Insights
 
-- BMW, Tesla and Mercedes emerges as the most expensive brands, with BMW standing out for its significant price fluctuations.
-- Ford consistently maintains the most affordable prices across the dataset.
-- Specific models such as the Mercedes GLC and BMW 3 Series, significantly influence overall car pricing.
+- Luxury Cars: BMW, Tesla and Mercedes dominate the luxury segmen, with BMW significant price fluctuations by model.
 
-[Price distribution of BMN Models]
+- Most Expensive Models: The Mercedes GLC is the most expensive model, while the BMW 3 Series is slightly more affordable, highlighting the role of model-specific features in pricing.
 
-### 2. Economic Cycles and Events
+- Popular Brands: Toyota and Audi have the highest counts, reflecting their popularity in the used car market.
 
-- The 2008 Golbal Recession caused a drop in car prices, especially for high-end luxuray cars.Following the crisis, there was a recovery, which led to an increase in prices.
+## Attribute-Specific Observations
 
-[price trend graph]
+- Mileage: Cars with moderate mileage command higher prices compared to those with very low or very high mileage.
 
-### 3. Fuel Type
+- Engine Size: No strict linear relationship with price, larger and smaller engines are often prices higher than medium-sized ones.
 
-- Diesel vehicles tend to have the highest average prices, followed by Hybrid cars.
+- Condition: Newer cars are priced higher, but older cars in good condition can retian significant value.
 
-- Electric and Petrol cars are generally priced lower, but the rise in electric vehicle demand post 2020 is notable.
-  [Price comparison by fuel]
+# Key Takeaways
 
-- Diesel cars, particularly for high-end brands like Mercedes and BMW, are priced higher due to their greater fuel efficiency and higher demand in specific markets. In contrast, electric cars are showing a rise in average prices, by the growing demand for eco-friendly vehicles.
+- Luxury vs. Mainstream Brands: Luxury brands are more sensitive to economic fluctuations, while mainstream brands exhibit stable pricing trends.
 
-### 4. Condition and Mileage: Key Influencers of Car Price
+- Fuel Type Preference: Disel cars remain popular in the luxury segment, while electric vehicles are gaining traction, particularly after 2020.
 
-- New cars typically have the highest prices, with older cars depreciating significantly over time.
+- Economic Events: Pricing trends align with major global events, emphasizing the interconnectedness of th automobile market with broader economic factors.
 
-- Mileage plays a key role in pricing, with older cars that have moderate mileage generally commanding higher prices than those with very low or very high mileage.
+# Visualizations
 
-[Price vs Mileage]
+The analysis includes a variety of visualizations to support the findings:
 
-There is no direct link between price and mileage in our dataset.
+- Price Distribution by Brand and Model: Bar chart showing average prices.
+- Yearly Price Trends: Line graph of price trends over time.
+- Mileage vs. Price Scatterplot: Scatterplot demonstrating the non-linear relationship.
+- Fuel Type Price Comparison: Boxplot of prices across fuel types.
+- Impact of Condition on Price: Grouped bar chart showing price differences by condition.
 
-### 5. Engine Size and Transmission
+# Model Performance and Evaluation
 
-- Engine size does not consistently correlate with higher or lower prices in the dataset. Larger or smaller engine sizes don't follow a strict price pattern, indicating other factors also play role in price dtermiation.
+## Model Implemented
 
-- Transmission type (Automatic vc Manual) has minimal impact on price in this dataset.
-  [engine size vs price]
+To predict used car prices, two models were implemented:
 
-- Although one might expect larger engine sizes to correlate with higher prices, the datset shows that this is not always the case. The price of a car seems to be more influenced bu brand prestige, model and age rather that engine size alone.
+1. Polynomial Regression
+2. XGBoost (Extreme Gradient Boosting)
+
+### Polynomial Regression
+
+The Polynomial Regression model was applied to capture non_linear relationships between featues and the target variable (car price). The model was evaluated using the following metrics:
+
+- Train R2 Score: 0.230
+- Test R2 Score: -0.363
+
+While Polynomial Regression was able to capture non-linearity in the data, the model showed poor performance on the test set, indication potential overfitting or an insufficiently complex model.
+
+### XGBoost (Extreme Gradient Boosting)
+
+XGBoost, an ensemble method utilizing boosting techniques, was applied to improve predictive accuracy. The model was evaluated using the following metrics:
+
+- Train R2 Score: 0.595
+- Test R2 Score: -0.131
+
+XGBoost performed better than Polynomial REgression on the training set but still struggled to generalization to the test set, as indicated by th negative R2 score on the test set.
+
+## Model Comparison
+
+- Polynomial Regression: The model performed poorly on the test data with negative R2, suggesting that it might not be the best choice for this dataset.
+
+- XGBoost: Althogh it performed better on the training data, the XGBoost model still showed a decrease in performance on the test data, indicating that further tuning or feature engineering may be required to improve generalization.
+
+# Conclusion
+
+The analysis if the used car market reveals important insights into facators influencing car prices, including brand, model, mileage, engine size, fuel type and condition. While both Polynomial REgression and XGBoost have some predictive power, the models are currently underperforming on the test set, indicationg that more work is needed.
+
+The next steps for this project involve:
+
+- Model Improvement: Currently working to improve the models, such as tuning, hyperparameters, using additional features or trying different algorithms.
+
+- Further analysis: Exploring other machine learning models and methodologies to identify the mosteffective model for predicting used car prices.
