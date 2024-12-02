@@ -1,4 +1,4 @@
-# Automobile Pricing Analysis
+# Used Car Price Analysis
 
 This repository provides an in-depth analysis of automobile prices based on a dataset of both new and used cars. The analysis investigates how different factors such as brand, model, engine size, mileage and economic events influencce the prices of vehicles.By identifying trends and patterns, this this project aims to build predictive models to estimate the price of the used cars. Please note that the insights and conclusions drawn in the repository are based on the dataset provided and may not reflect real-world within the broader automobile market.
 
